@@ -2,7 +2,6 @@
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption}
 \usepackage{float}
 \usepackage{hyperref}
-\usepackage{esr}
 \usepackage{datatool}
 
 \makeatletter
@@ -29,8 +28,7 @@
 
 \DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\country=c,\street=st,\postalcode=plz,\location=loc,\salut=sal,\code=code}{%
 
-\setkomavar{date}{\facdate}
-\setkomavar{subject}{Rechnung {\invoicenr}}
+\setkomavar{subject}{Test...}
 
 \selectlanguage{ngerman}
 
