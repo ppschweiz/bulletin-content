@@ -1,0 +1,71 @@
+\documentclass[ppsletter,fontsize=11pt,foldmarks=false ]{scrlttr2}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{esr}
+\usepackage{datatool}
+
+\makeatletter
+\@setplength{toaddrvpos}{4.5cm}
+\@setplength{toaddrhpos}{12cm}
+\KOMAoptions{foldmarks=off}
+
+\DTLsetseparator{;}
+\DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,code}]{people}{people.csv}
+
+\setkomavar{partei}{Stefan Thöni}
+\setkomavar{departement}{Co-Präsident}
+\setkomavar{fromname}{}
+\setkomavar{fromstreet}{Piratenpartei Schweiz}
+\setkomavar{fromcity}{3000 Bern}
+\setkomavar{fromemail}{finance@piratenpartei.ch}
+\setkomavar{fromurl}{www.piratenpartei.ch}
+\setkomavar{backaddress}{}
+
+
+\newcommand{\currency}{1}
+
+\begin{document}
+
+\DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\country=c,\street=st,\postalcode=plz,\location=loc,\salut=sal,\code=code}{%
+
+\setkomavar{date}{\facdate}
+\setkomavar{subject}{Rechnung {\invoicenr}}
+
+\selectlanguage{ngerman}
+
+\ifstr{\country}{Switzerland}{%
+
+\begin{letter}{%
+	\givenname~\surname\\
+	\street~\\
+	\postalcode~\location\\
+	~
+}
+
+}{%
+
+\begin{letter}{%
+	\givenname~\surname\\
+	\street~\\
+	\postalcode~\location\\
+	\country~
+}
+
+}
+
+\enlargethispage{10cm}
+
+\opening{\salut}
+
+Test test test!
+
+\id
+
+\code
+
+\end{letter}%
+
+}%
+
+\end{document}
