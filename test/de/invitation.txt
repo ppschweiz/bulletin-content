@@ -1,3 +1,6 @@
 $GREET
 
-Test test test!
+Es findet eine Urabstimmung statt. Siehe Stimmaterial im Anhang.
+
+Gruss
+Stefan
