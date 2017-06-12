@@ -1,0 +1,6 @@
+$GREET
+
+Es findet eine Urabstimmung statt. Siehe Stimmaterial im Anhang.
+
+Gruss
+Stefan

@@ -1,0 +1,176 @@
+ss[11pt, a4paper]{scrartcl}
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{datatool}
+\usepackage{textpos}
+\usepackage{eso-pic}
+\usepackage{framed}
+\usepackage[german=swiss]{csquotes}
+\usepackage[english,french,italian,ngerman]{babel}
+\usepackage{setspace}
+
+\setromanfont[BoldFont=Aller Bold]{Aller Light}
+\setsansfont[BoldFont=Aller Bold]{Aller Light}
+
+\DTLsetseparator{;}
+\DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
+
+\begin{document}
+
+\selectlanguage{ngerman}
+
+\DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\mail=mail,\country=c,\street=st,\postalcode=plz,\location=loc,\salutation=sal,\code=cd}{%
+
+%\AddToShipoutPicture{\put(0,0){\includegraphics[width=\paperwidth]{half.pdf}}}
+%\AddToShipoutPicture{\includegraphics[width=\paperwidth]{half.pdf}}
+
+\begin{minipage}[t][13.42cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\givenname~\surname     \\
+\street                 \\
+\postalcode~\location   \\
+\ifstr{\country}{Switzerland}{%
+\~                      \\
+}{%
+\country ~              \\
+}%
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+\begin{textblock}{13.5}(0,7.05)
+\centering
+\scriptsize
+hier falten \hspace{3.5cm} hier falten \hspace{3.5cm} hier falten
+\end{textblock}
+
+{\LARGE
+\textbf{Stimmmaterial} für die \\
+\textbf{Urabstimmung} der \\
+Piratenpartei Schweiz \\
+vom 19.~Juni~2017
+
+}
+
+\vspace{5.5cm}
+
+\begin{textblock}{13.5}(0,0)
+Zum Abstimmen wie folgt vorgehen:
+\begin{enumerate}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{1pt}
+\item Stimmrechtsausweis unterschreiben und falten.
+\item Stimmzettel gemäss deinen Präferenzen ausfüllen.
+\item Stimmzettel in ein kleines Couvert legen und dieses sicher verschliessen.
+\item Das verschlossene Stimmcouvert und den Stimmrechtsausweis zusammen in ein zweites (grösseres) Couvert geben und ebenfalls sicher verschliessen.
+\item Das vollständige Couvert bitte bis am \textbf{19.~Juni~2017} an die aufgedruckte Adresse senden.
+\end{enumerate}
+\end{textblock}
+
+\end{minipage}
+
+\line(1,0){500}
+\vspace{1cm}
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\underline{\textsuperscript*{ \givenname~\surname, \street, \postalcode~\location }} \\
+\vspace{-0.3cm} \\
+Piratenpartei Schweiz \\
+Präsidium der Piratenversammlung \\
+8000 Zürich
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Stimmrechtsausweis}} \\
+für die Urabstimmung vom 19.~Juni~2017 \\
+
+Mitglied Nr. \textbf{\id}   \\
+\givenname~\surname         \\
+\street                     \\
+\postalcode~\location       \\
+\ifstr{\country}{Switzerland}{%
+\~                          \\
+}{%
+\country ~                  \\
+}%
+
+\begin{textblock}{6}(0,-0.2)
+Verifikation:
+\end{textblock}
+
+\begin{textblock}{4}(2,-0.2)
+\raggedright
+\code
+\end{textblock}
+
+\vspace{4cm}
+
+\begin{textblock}{6}(0,-0.2)
+\begin{framed}
+Unterschrift des Stimmberechtigten \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+\begin{textblock}{6}(7.3,-0.2)
+\begin{framed}
+Auszählung \hfill Leer lassen! \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+
+\end{minipage}
+
+\newpage
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Stimmzettel}} \\
+für die Urabstimmung vom 19.~Juni~2017 \\
+
+\vspace{2cm}
+
+
+\textbf{Wahl von Revisoren}
+
+Gültige Stimmen sind jeweils \enquote{Ja}, \enquote{Nein} und \enquote{Enthaltung}.
+
+Gewählt ist jeder Kandidat, der eine absolute Mehrheit von \enquote{Ja}-Stimmen auf sich vereinigt.
+
+\vspace{1cm}
+\begin{tabbing}
+~\hspace{2cm} \= ~\hspace{8cm} \= ~\hspace{2cm} \kill
+~\> Pat Mächler:        \> \_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabbing}
+
+\vspace{0.1cm}
+\begin{tabbing}
+~\hspace{2cm} \= ~\hspace{8cm} \= ~\hspace{2cm} \kill
+~\> Andreas Zimmermann: \> \_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabbing}
+
+\vspace{0.5cm}
+Den Stimmzettel bitte nicht markieren!
+
+\end{minipage}
+
+
+}
+
+\end{document}
+
