@@ -1,0 +1,211 @@
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{datatool}
+\usepackage{textpos}
+\usepackage{eso-pic}
+\usepackage{framed}
+\usepackage[german=swiss]{csquotes}
+\usepackage[english,french,italian,ngerman]{babel}
+\usepackage{setspace}
+\usepackage{array}
+
+\setromanfont[BoldFont=Aller Bold]{Aller Light}
+\setsansfont[BoldFont=Aller Bold]{Aller Light}
+
+\DTLsetseparator{;}
+\DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
+
+\begin{document}
+
+\selectlanguage{french}
+
+\DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\mail=mail,\country=c,\street=st,\postalcode=plz,\location=loc,\salutation=sal,\code=cd}{%
+
+%\AddToShipoutPicture{\put(0,0){\includegraphics[width=\paperwidth]{half.pdf}}}
+%\AddToShipoutPicture{\includegraphics[width=\paperwidth]{half.pdf}}
+
+\begin{minipage}[t][13.42cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\givenname~\surname     \\
+\street                 \\
+\postalcode~\location   \\
+\ifstr{\country}{Switzerland}{%
+\~                      \\
+}{%
+\country ~              \\
+}%
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+\begin{textblock}{13.5}(0,7.05)
+\centering
+\scriptsize
+plier ici \hspace{3.5cm} plier ici \hspace{3.5cm} plier ici
+\end{textblock}
+
+{\LARGE
+\textbf{Matériel de vote} pour la \\
+\textbf{Votation de base} du \\
+Parti Pirate Suisse \\
+le 17~Janvier~2018
+
+}
+
+\vspace{5.5cm}
+
+\begin{textblock}{13.5}(0,0)
+Pour voter procédez comme suit:
+\begin{enumerate}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{1pt}
+\item Veuillez signer la carte d'électeur.
+\item Remplissez le bulletin de vote selon vos préférences.
+\item Glissez le bulletin de vote dans une enveloppe et fermez la soigneusement.
+\item Glissez cette enveloppe contenant le bulletin ainsi que la carte d'électeur ensemble dans une deuxième enveloppe (plus grande) et refermez bien celle-ci également.
+\item Envoyez cette enveloppe complète à l'adresse indiquée sur la carte d'électeur jusqu'au \textbf{17~Janvier~2018}.
+\end{enumerate}
+\end{textblock}
+
+\end{minipage}
+
+\line(1,0){500}
+\vspace{1cm}
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\underline{\textsuperscript*{ \givenname~\surname, \street, \postalcode~\location }} \\
+\vspace{-0.3cm} \\
+Piratenpartei Schweiz \\
+Präsidium der Piratenversammlung \\
+8000 Zürich
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Carte d'électeur}} \\
+pour la votation de base du 17~Janvier~2018 \\
+
+numéro de membre \textbf{\id}   \\
+\givenname~\surname         \\
+\street                     \\
+\postalcode~\location       \\
+\ifstr{\country}{Switzerland}{%
+\~                          \\
+}{%
+\country ~                  \\
+}%
+
+\begin{textblock}{6}(0,-0.2)
+Vérification:
+\end{textblock}
+
+\begin{textblock}{4}(2,-0.2)
+\raggedright
+\code
+\end{textblock}
+
+\vspace{4cm}
+
+\begin{textblock}{6}(0,-0.2)
+\begin{framed}
+Signature de l'électeur \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+\begin{textblock}{6}(7.3,-0.2)
+\begin{framed}
+Dépouillement \hfill Laissez vide! \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+
+\end{minipage}
+
+\newpage
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Bulletin de vote}} \\
+pour la votation de base du 17~Janvier~2018 \\
+
+\vspace{2cm}
+
+\textbf{Prise de position pour l'initiative \enquote{No-Billag}}
+
+\vspace{0.1cm}
+Les votes valides sont \enquote{Oui}, \enquote{Non} und \enquote{Abstention}.
+
+\vspace{0.1cm}
+Une prise de position doit être faite en deux votes distincts, conformément à l'article 6, paragraphe 3, du Règlement de l'Assemblée générale et au Règlement de vote.
+
+Les dispositions transitoires de l'article B, paragraphe 3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votes sont effectués en même temps par bulletin de vote de consentement.
+
+ "oui", "non" ou "abstention"  
+
+\vspace{0.1cm}
+Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention} à chaque question. L'option choisie pour chaque votation est celle de la majorité simple des "oui".
+
+\vspace{1cm}
+
+\textbf{Votation 1}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Acceptez-vous l'initiative No-Billag \enquote{Oui à la suppression des redevances radio et télévision (suppression des redevances Billag)}?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Abstimmung 2}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Le Parti Pirate Suisse doit-il ne pas prendre position (liberté de vote)?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Le Parti Pirate Suisse doit il prendre position en cas de Oui?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Le Parti Pirate Suisse doit il prendre position en cas de Non?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+Veuillez ne pas marquer ou annoter le présent bulletin!
+
+
+\end{minipage}
+
+
+}
+
+\end{document}
+
