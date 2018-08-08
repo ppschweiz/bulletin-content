@@ -15,6 +15,11 @@
 \setromanfont[BoldFont=Aller Bold]{Aller Light}
 \setsansfont[BoldFont=Aller Bold]{Aller Light}
 
+\newcommand{\votingdate}{17~août~2018}
+\newcommand{\oui}{\enquote{\textit{oui}}}
+\newcommand{\non}{\enquote{\textit{non}}}
+\newcommand{\abstention}{\enquote{\textit{abstention}}}
+
 \DTLsetseparator{;}
 \DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
 
@@ -54,7 +59,7 @@ plier ici \hspace{3.5cm} plier ici \hspace{3.5cm} plier ici
 \textbf{Matériel de vote} pour la \\
 \textbf{Votation de base} du \\
 Parti Pirate Suisse \\
-le 13~août~2018
+le \votingdate{}
 
 }
 
@@ -69,7 +74,7 @@ Pour voter procédez comme suit:
 \item Remplissez le bulletin de vote selon vos préférences.
 \item Glissez le bulletin de vote dans une enveloppe et fermez la soigneusement.
 \item Glissez cette enveloppe contenant le bulletin ainsi que la carte d'électeur ensemble dans une deuxième enveloppe (plus grande) et refermez bien celle-ci également.
-\item Envoyez cette enveloppe complète à l'adresse indiquée sur la carte d'électeur jusqu'au \textbf{13~août~2018}.
+\item Envoyez cette enveloppe complète à l'adresse indiquée sur la carte d'électeur jusqu'au \textbf{\votingdate{}}.
 \end{enumerate}
 \end{textblock}
 
@@ -93,7 +98,7 @@ Präsidium der Piratenversammlung \\
 \end{textblock}
 
 {\LARGE\textbf{Carte d'électeur}} \\
-pour la votation de base du 13~août~2018 \\
+pour la votation de base du \votingdate{} \\
 
 numéro de membre \textbf{\id}   \\
 \givenname~\surname         \\
@@ -142,22 +147,26 @@ Dépouillement \hfill Laissez vide! \\
 \end{textblock}
 
 {\LARGE\textbf{Bulletin de vote 1}} \\
-pour la votation de base du 17~août~2018 \\
+pour la votation de base du \votingdate{} \\
 
 \vspace{2cm}
 
 \textbf{Prise de position pour l'initiative \enquote{Pour la souveraineté alimentaire}}
 
-\vspace{0.1cm}
-Les votes valides sont \enquote{Oui}, \enquote{Non} und \enquote{Abstention}.
+\vspace{0.2cm}
+Les votes valides sont \oui{}, \non{} et \abstention{}.
 
-\vspace{0.1cm}
+\vspace{0.2cm}
 Une prise de position doit être faite en deux votes distincts, conformément à l'article 6, paragraphe 3, du Règlement de l'Assemblée générale et au Règlement de vote.
 
-Les dispositions transitoires de l'article B, paragraphe 3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votes sont effectués en même temps par bulletin de vote de consentement "oui", "non" ou "abstention". 
+\vspace{0.2cm}
+Les dispositions transitoires de l'article~B, paragraphe~3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votations sont effectuées en même temps par bulletin de vote de consentement \oui{}, \non{} ou \abstention{}.
 
-\vspace{0.1cm}
-Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention} à chaque question. L'option choisie pour chaque votation est celle de la majorité simple des "oui".
+\vspace{0.2cm}
+Dans la votation~1, tu votes selon ton choix pour le sujet soumis. Le résultat de la votation~1 se détermine du nombre de votes en faveur ou contre le sujet soumis.
+
+\vspace{0.2cm}
+Dans la double votation~2 tu détermines si le Parti Pirate Suisse doit publier le résultat de la votations pour le \textit{oui} ou le \textit{non} choisi à la votation~1. Si dans la votation~2 tu désires choisir la liberté de vote tu voteras deux fois \non{}. Si tu veux que le résultat soit publié dans les deux cas de figure tu voteras deux fois \oui{}.
 
 \vspace{1cm}
 
@@ -166,25 +175,25 @@ Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Acceptez-vous l'initiative \enquote{Pour la souveraineté alimentaire. L’agriculture nous concerne toutes et tous}?
+Acceptez-vous l'initiative populaire \enquote{Pour la souveraineté alimentaire. L’agriculture nous concerne toutes et tous}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
-\textbf{Abstimmung 2}
+\textbf{Votation 2}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Oui?
+Le Parti Pirate Suisse doit il prendre position en cas de \oui{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Non?
+Le Parti Pirate Suisse doit il prendre position en cas de \non{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -205,22 +214,26 @@ Veuillez ne pas marquer ou annoter le présent bulletin!
 \end{textblock}
 
 {\LARGE\textbf{Bulletin de vote 2}} \\
-pour la votation de base du 17~août~2018 \\
+pour la votation de base du \votingdate{} \\
 
 \vspace{2cm}
 
 \textbf{Prise de position pour l'initiative \enquote{pour des aliments équitables}}
 
-\vspace{0.1cm}
-Les votes valides sont \enquote{Oui}, \enquote{Non} und \enquote{Abstention}.
+\vspace{0.2cm}
+Les votes valides sont \oui{}, \non{} et \abstention{}.
 
-\vspace{0.1cm}
+\vspace{0.2cm}
 Une prise de position doit être faite en deux votes distincts, conformément à l'article 6, paragraphe 3, du Règlement de l'Assemblée générale et au Règlement de vote.
 
-Les dispositions transitoires de l'article B, paragraphe 3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votes sont effectués en même temps par bulletin de vote de consentement "oui", "non" ou "abstention" .
+\vspace{0.2cm}
+Les dispositions transitoires de l'article~B, paragraphe~3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votations sont effectuées en même temps par bulletin de vote de consentement \oui{}, \non{} ou \abstention{}.
 
-\vspace{0.1cm}
-Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention} à chaque question. L'option choisie pour chaque votation est celle de la majorité simple des "oui".
+\vspace{0.2cm}
+Dans la votation~1, tu votes selon ton choix pour le sujet soumis. Le résultat de la votation~1 se détermine du nombre de votes en faveur ou contre le sujet soumis.
+
+\vspace{0.2cm}
+Dans la double votation~2 tu détermines si le Parti Pirate Suisse doit publier le résultat de la votations pour le \textit{oui} ou le \textit{non} choisi à la votation~1. Si dans la votation~2 tu désires choisir la liberté de vote tu voteras deux fois \non{}. Si tu veux que le résultat soit publié dans les deux cas de figure tu voteras deux fois \oui{}.
 
 \vspace{1cm}
 
@@ -229,25 +242,25 @@ Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Acceptez-vous l'initiative pour des aliments équitables \enquote{Pour des denrées alimentaires saines et produites dans des conditions équitables et écologiques}?
+Acceptez-vous l'initiative populaire \enquote{Pour des denrées alimentaires saines et produites dans des conditions équitables et écologiques (initiative pour des aliments équitables)}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
-\textbf{Abstimmung 2}
+\textbf{Votation 2}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Oui?
+Le Parti Pirate Suisse doit il prendre position en cas de \oui{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Non?
+Le Parti Pirate Suisse doit il prendre position en cas de \non{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -267,22 +280,26 @@ Veuillez ne pas marquer ou annoter le présent bulletin!
 \end{textblock}
 
 {\LARGE\textbf{Bulletin de vote 3}} \\
-pour la votation de base du 17~août~2018 \\
+pour la votation de base du \votingdate{} \\
 
 \vspace{2cm}
 
-\textbf{Prise de position pour l'initiative \enquote{vélo}}
+\textbf{Prise de position pour le contre-projet direct à \enquote{initiative vélo}}
 
-\vspace{0.1cm}
-Les votes valides sont \enquote{Oui}, \enquote{Non} und \enquote{Abstention}.
+\vspace{0.2cm}
+Les votes valides sont \oui{}, \non{} et \abstention{}.
 
-\vspace{0.1cm}
+\vspace{0.2cm}
 Une prise de position doit être faite en deux votes distincts, conformément à l'article 6, paragraphe 3, du Règlement de l'Assemblée générale et au Règlement de vote.
 
-Les dispositions transitoires de l'article B, paragraphe 3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votes sont effectués en même temps par bulletin de vote de consentement "oui", "non" ou "abstention" .
+\vspace{0.2cm}
+Les dispositions transitoires de l'article~B, paragraphe~3, prévoient que, dans le cas de vote effectué par bulletin envoyé par la poste, les deux votations sont effectuées en même temps par bulletin de vote de consentement \oui{}, \non{} ou \abstention{}.
 
-\vspace{0.1cm}
-Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention} à chaque question. L'option choisie pour chaque votation est celle de la majorité simple des "oui".
+\vspace{0.2cm}
+Dans la votation~1, tu votes selon ton choix pour le sujet soumis. Le résultat de la votation~1 se détermine du nombre de votes en faveur ou contre le sujet soumis.
+
+\vspace{0.2cm}
+Dans la double votation~2 tu détermines si le Parti Pirate Suisse doit publier le résultat de la votations pour le \textit{oui} ou le \textit{non} choisi à la votation~1. Si dans la votation~2 tu désires choisir la liberté de vote tu voteras deux fois \non{}. Si tu veux que le résultat soit publié dans les deux cas de figure tu voteras deux fois \oui{}.
 
 \vspace{1cm}
 
@@ -291,25 +308,25 @@ Vous pouvez donc répondre \enquote{Oui}, \enquote{Non} oder \enquote{Abstention
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Acceptez-vous l'initiative vélo \enquote{Pour la promotion des voies cyclables et des chemins et sentiers pédestres}?
+Acceptez-vous l'arrêté fédéral concernant les voies cyclables et les chemins et sentiers pédestres (contre-projet direct à l’initiative populaire \enquote{Pour la promotion des voies cyclables et des chemins et sentiers pédestres (initiative vélo)}, qui a été retirée).?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
-\textbf{Abstimmung 2}
+\textbf{Votation 2}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Oui?
+Le Parti Pirate Suisse doit il prendre position en cas de \oui{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Le Parti Pirate Suisse doit il prendre position en cas de Non?
+Le Parti Pirate Suisse doit il prendre position en cas de \non{}?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 

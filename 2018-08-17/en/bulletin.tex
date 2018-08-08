@@ -15,6 +15,11 @@
 \setromanfont[BoldFont=Aller Bold]{Aller Light}
 \setsansfont[BoldFont=Aller Bold]{Aller Light}
 
+\newcommand{\votingdate}{17.~August~2018}
+\newcommand{\ja}{\enquote{\textit{Ja}}}
+\newcommand{\nein}{\enquote{\textit{Nein}}}
+\newcommand{\enthaltung}{\enquote{\textit{Enthaltung}}}
+
 \DTLsetseparator{;}
 \DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
 
@@ -54,7 +59,7 @@ hier falten \hspace{3.5cm} hier falten \hspace{3.5cm} hier falten
 \textbf{Stimmmaterial} für die \\
 \textbf{Urabstimmung} der \\
 Piratenpartei Schweiz \\
-vom 13.~August~2018
+vom \votingdate{}
 
 }
 
@@ -69,7 +74,7 @@ Zum Abstimmen wie folgt vorgehen:
 \item Stimmzettel gemäss deinen Präferenzen ausfüllen.
 \item Stimmzettel in ein kleines Couvert legen und dieses sicher verschliessen.
 \item Das verschlossene Stimmcouvert und den Stimmrechtsausweis zusammen in ein zweites (grösseres) Couvert geben und ebenfalls sicher verschliessen.
-\item Das vollständige Couvert bitte bis am \textbf{13.~August~2018} an die aufgedruckte Adresse senden.
+\item Das vollständige Couvert bitte bis am \textbf{\votingdate{}} an die aufgedruckte Adresse senden.
 \end{enumerate}
 \end{textblock}
 
@@ -93,7 +98,7 @@ Präsidium der Piratenversammlung \\
 \end{textblock}
 
 {\LARGE\textbf{Stimmrechtsausweis}} \\
-für die Urabstimmung vom 13.~August~2018 \\
+für die Urabstimmung vom \votingdate{} \\
 
 Mitglied Nr. \textbf{\id}   \\
 \givenname~\surname         \\
@@ -142,7 +147,7 @@ Auszählung \hfill Leer lassen! \\
 \end{textblock}
 
 {\LARGE\textbf{Stimmzettel 1}} \\
-für die Urabstimmung vom 13.~August~2018 \\
+für die Urabstimmung vom \votingdate{} \\
 
 \vspace{2cm}
 
@@ -150,16 +155,16 @@ für die Urabstimmung vom 13.~August~2018 \\
 \textbf{Parolenfassung zur Volksinitiative \enquote{Ernährungssouveränität}}
 
 \vspace{0.2cm}
-Gültige Stimmen sind jeweils \enquote{Ja}, \enquote{Nein} und \enquote{Enthaltung}.
+Gültige Stimmen sind jeweils \ja{}, \nein{} und \enthaltung{}.
 
 \vspace{0.2cm}
-Eine Parole ist gemäss Artikel 6 Absatz 3 des Versammlungs- und Abstimmungsreglement in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel B Absatz 3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
+Eine Parole ist gemäss Artikel~6 Absatz~3 des Versammlungs- und Abstimmungsreglements in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel~B Absatz~3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
 
 \vspace{0.2cm}
-Ihr dürft also bei jeder Abstimmungsfrage mit \enquote{Ja}, \enquote{Nein} oder \enquote{Enthaltung} antworten oder leer lassen. Gewählt ist pro Abstimmung jene Option, die eine einfache Mehrheit von \enquote{Ja}-Stimmen auf sich vereinigt. 
+In der Abstimmung~1 stimmst du gemäss deiner Präferenz zur Vorlage. Das Ergebnis von Abstimmung~1 ergibt sich daraus, ob es mehr \textit{Ja}-Stimmen oder \textit{Nein}-Stimmen hat. 
 
 \vspace{0.2cm}
-Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \enquote{Nein}, wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \enquote{Ja} %https://projects.piratenpartei.ch/projects/statrev/wiki/Parolenfassung hier abgeschrieben
+In der Abstimmung~2 stimmst du darüber ab, ob die Piratenpartei Schweiz die \textit{Ja}-Parole beziehungsweise \textit{Nein}-Parole gemäss Abstimmung~1 publizieren soll. Wenn du bei der Abstimmung~2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \nein{}. Wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \ja{}.
 
 \vspace{1cm}
 
@@ -168,7 +173,7 @@ Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möc
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Nimmst du die Ernährungssourveränitäts-Initiative \enquote{Für Ernährungssouveränität. Die Landwirtschaft betrifft uns alle} an?
+Nimmst du die Volksinitiative \enquote{Für Ernährungssouveränität. Die Landwirtschaft betrifft uns alle} an?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -179,14 +184,14 @@ Nimmst du die Ernährungssourveränitäts-Initiative \enquote{Für Ernährungsso
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Ja vertreten?
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \ja{} vertreten?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Nein vertreten? 
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \nein{} vertreten? 
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -205,7 +210,7 @@ Den Stimmzettel bitte nicht markieren!
 \end{textblock}
 
 {\LARGE\textbf{Stimmzettel 2}} \\
-für die Urabstimmung vom 13.~August~2018 \\
+für die Urabstimmung vom \votingdate{} \\
 
 \vspace{2cm}
 
@@ -213,16 +218,16 @@ für die Urabstimmung vom 13.~August~2018 \\
 \textbf{Parolenfassung zur Volksinitiative \enquote{Fair-Food}}
 
 \vspace{0.2cm}
-Gültige Stimmen sind jeweils \enquote{Ja}, \enquote{Nein} und \enquote{Enthaltung}.
+Gültige Stimmen sind jeweils \ja{}, \nein{} und \enthaltung{}.
 
 \vspace{0.2cm}
-Eine Parole ist gemäss Artikel 6 Absatz 3 des Versammlungs- und Abstimmungsreglement in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel B Absatz 3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
+Eine Parole ist gemäss Artikel~6 Absatz~3 des Versammlungs- und Abstimmungsreglements in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel~B Absatz~3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
 
 \vspace{0.2cm}
-Ihr dürft also bei jeder Abstimmungsfrage mit \enquote{Ja}, \enquote{Nein} oder \enquote{Enthaltung} antworten oder leer lassen. Gewählt ist pro Abstimmung jene Option, die eine einfache Mehrheit von \enquote{Ja}-Stimmen auf sich vereinigt. 
+In der Abstimmung~1 stimmst du gemäss deiner Präferenz zur Vorlage. Das Ergebnis von Abstimmung~1 ergibt sich daraus, ob es mehr \textit{Ja}-Stimmen oder \textit{Nein}-Stimmen hat. 
 
 \vspace{0.2cm}
-Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \enquote{Nein}, wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \enquote{Ja} %https://projects.piratenpartei.ch/projects/statrev/wiki/Parolenfassung hier abgeschrieben
+In der Abstimmung~2 stimmst du darüber ab, ob die Piratenpartei Schweiz die \textit{Ja}-Parole beziehungsweise \textit{Nein}-Parole gemäss Abstimmung~1 publizieren soll. Wenn du bei der Abstimmung~2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \nein{}. Wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \ja{}.
 
 \vspace{1cm}
 
@@ -231,7 +236,7 @@ Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möc
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Nimmst du die Fair-Food-Initiative \enquote{Für gesunde sowie umweltfreundlich und fair hergestellte Lebensmittel (Fair-Food-Initiative)} an?
+Nimmst du die Volksinitiative \enquote{Für gesunde sowie umweltfreundlich und fair hergestellte Lebensmittel (Fair-Food-Initiative)}. an?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -242,14 +247,14 @@ Nimmst du die Fair-Food-Initiative \enquote{Für gesunde sowie umweltfreundlich 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Ja vertreten?
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \ja{} vertreten?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Nein vertreten? 
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \nein{} vertreten? 
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -268,24 +273,24 @@ Den Stimmzettel bitte nicht markieren!
 \end{textblock}
 
 {\LARGE\textbf{Stimmzettel 3}} \\
-für die Urabstimmung vom 13.~August~2018 \\
+für die Urabstimmung vom \votingdate{} \\
 
 \vspace{2cm}
 
 % ab hier kopieren
-\textbf{Parolenfassung zur Volksinitiative \enquote{Velo-Initiative}}
+\textbf{Parolenfassung zum Gegenvorschlag zur \enquote{Velo-Initiative}}
 
 \vspace{0.2cm}
-Gültige Stimmen sind jeweils \enquote{Ja}, \enquote{Nein} und \enquote{Enthaltung}.
+Gültige Stimmen sind jeweils \ja{}, \nein{} und \enthaltung{}.
 
 \vspace{0.2cm}
-Eine Parole ist gemäss Artikel 6 Absatz 3 des Versammlungs- und Abstimmungsreglement in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel B Absatz 3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
+Eine Parole ist gemäss Artikel~6 Absatz~3 des Versammlungs- und Abstimmungsreglements in zwei Abstimmungen zu fassen. In den Übergangsbestimmungen in Artikel~B Absatz~3bis ist festgesetzt, dass bei brieflicher Urabstimmung die beiden Abstimmnungen gleichzeitig erfolgen.
 
 \vspace{0.2cm}
-Ihr dürft also bei jeder Abstimmungsfrage mit \enquote{Ja}, \enquote{Nein} oder \enquote{Enthaltung} antworten oder leer lassen. Gewählt ist pro Abstimmung jene Option, die eine einfache Mehrheit von \enquote{Ja}-Stimmen auf sich vereinigt. 
+In der Abstimmung~1 stimmst du gemäss deiner Präferenz zur Vorlage. Das Ergebnis von Abstimmung~1 ergibt sich daraus, ob es mehr \textit{Ja}-Stimmen oder \textit{Nein}-Stimmen hat. 
 
 \vspace{0.2cm}
-Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \enquote{Nein}, wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \enquote{Ja} %https://projects.piratenpartei.ch/projects/statrev/wiki/Parolenfassung hier abgeschrieben
+In der Abstimmung~2 stimmst du darüber ab, ob die Piratenpartei Schweiz die \textit{Ja}-Parole beziehungsweise \textit{Nein}-Parole gemäss Abstimmung~1 publizieren soll. Wenn du bei der Abstimmung~2 auf jeden Fall für eine Stimmfreigabe stimmen möchtest, stimme zwei Mal \nein{}. Wenn du die Parole in jedem Fall publiziert haben möchtest, stimme zwei Mal \ja{}.
 
 \vspace{1cm}
 
@@ -294,7 +299,7 @@ Wenn du bei der Abstimmung 2 auf jeden Fall für eine Stimmfreigabe stimmen möc
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Nimmst du die Velo-Initiative \enquote{Zur Förderung der Velo-, Fuss- und Wanderwege (Velo-Initiative)} an?
+Nimmst du den \enquote{Bundesbeschluss über die Velowege sowie die Fuss- und Wanderwege (direkter Gegenentwurf zur zurückgezogenen Volksinitiative \enquote{Zur Förderung der Velo-, Fuss- und Wanderwege (Velo-Initiative)}).} an?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
@@ -305,14 +310,14 @@ Nimmst du die Velo-Initiative \enquote{Zur Förderung der Velo-, Fuss- und Wande
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Ja vertreten?
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \ja{} vertreten?
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
 \vspace{0.5cm}
 
 \begin{tabular}{ b{13.5cm} b{3cm} }
-Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem Nein vertreten? 
+Soll die Piratenpartei Schweiz die in Abstimmung 1 gefasste Parole bei einem \nein{} vertreten? 
 & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
 \end{tabular}
 
