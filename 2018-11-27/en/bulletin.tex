@@ -1,5 +1,5 @@
 \documentclass[11pt, a4paper]{scrartcl}
-\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage{geometry}
 \usepackage{fontspec}
 \usepackage{xltxtra}
 \usepackage{xunicode}
@@ -14,6 +14,8 @@
 \usepackage[normalem]{ulem}
 \usepackage{enumitem}
 \usepackage{ppslaw}
+
+\geometry{margin=1cm}
 
 \setromanfont[BoldFont=Aller Bold]{Aller Light}
 \setsansfont[BoldFont=Aller Bold]{Aller Light}
@@ -41,11 +43,7 @@
 \givenname~\surname     \\
 \street                 \\
 \postalcode~\location   \\
-\ifstr{\country}{Switzerland}{%
-\~                      \\
-}{%
 \country ~              \\
-}%
 \end{textblock}
 
 \begin{textblock}{6}(7.5,0)
