@@ -1,0 +1,267 @@
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{datatool}
+\usepackage{textpos}
+\usepackage{eso-pic}
+\usepackage{framed}
+\usepackage[german=swiss]{csquotes}
+\usepackage[english,french,italian,ngerman]{babel}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\usepackage{ppslaw}
+
+\setromanfont[BoldFont=Aller Bold]{Aller Light}
+\setsansfont[BoldFont=Aller Bold]{Aller Light}
+
+\newcommand{\votingdate}{27.~November~2018}
+\newcommand{\ja}{\enquote{\textit{Ja}}}
+\newcommand{\nein}{\enquote{\textit{Nein}}}
+\newcommand{\enthaltung}{\enquote{\textit{Enthaltung}}}
+
+\DTLsetseparator{;}
+\DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
+
+\begin{document}
+
+\selectlanguage{ngerman}
+
+\DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\mail=mail,\country=c,\street=st,\postalcode=plz,\location=loc,\salutation=sal,\code=cd}{%
+
+%\AddToShipoutPicture{\put(0,0){\includegraphics[width=\paperwidth]{half.pdf}}}
+%\AddToShipoutPicture{\includegraphics[width=\paperwidth]{half.pdf}}
+
+\begin{minipage}[t][13.42cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\givenname~\surname     \\
+\street                 \\
+\postalcode~\location   \\
+\ifstr{\country}{Switzerland}{%
+\~                      \\
+}{%
+\country ~              \\
+}%
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+\begin{textblock}{13.5}(0,7.05)
+\centering
+\scriptsize
+hier falten \hspace{3.5cm} hier falten \hspace{3.5cm} hier falten
+\end{textblock}
+
+{\LARGE
+\textbf{Stimmmaterial} für die \\
+\textbf{Urabstimmung} der \\
+Piratenpartei Schweiz \\
+vom \votingdate{}
+
+}
+
+\vspace{5.5cm}
+\begin{textblock}{13.5}(0,0)
+Zum Abstimmen wie folgt vorgehen:
+\begin{enumerate}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{1pt}
+\item Stimmrechtsausweis unterschreiben und falten.
+\item Stimmzettel gemäss deinen Präferenzen ausfüllen.
+\item Stimmzettel in ein kleines Couvert legen und dieses sicher verschliessen.
+\item Das verschlossene Stimmcouvert und den Stimmrechtsausweis zusammen in ein zweites (grösseres) Couvert geben und ebenfalls sicher verschliessen.
+\item Das vollständige Couvert bitte bis am \textbf{\votingdate{}} an die aufgedruckte Adresse senden.
+\end{enumerate}
+\end{textblock}
+
+\end{minipage}
+
+\line(1,0){500}
+\vspace{1cm}
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\underline{\textsuperscript*{ \givenname~\surname, \street, \postalcode~\location }} \\
+\vspace{-0.3cm} \\
+Piratenpartei Schweiz \\
+Präsidium der Piratenversammlung \\
+8000 Zürich
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Stimmrechtsausweis}} \\
+für die Urabstimmung vom \votingdate{} \\
+
+Mitglied Nr. \textbf{\id}   \\
+\givenname~\surname         \\
+\street                     \\
+\postalcode~\location       \\
+\ifstr{\country}{Switzerland}{%
+\~                          \\
+}{%
+\country ~                  \\
+}%
+
+\begin{textblock}{6}(0,-0.2)
+Verifikation:
+\end{textblock}
+
+\begin{textblock}{4}(2,-0.2)
+\raggedright
+\code
+\end{textblock}
+
+\vspace{4cm}
+
+\begin{textblock}{6}(0,-0.2)
+\begin{framed}
+Unterschrift des Stimmberechtigten \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+\begin{textblock}{6}(7.3,-0.2)
+\begin{framed}
+Auszählung \hfill Leer lassen! \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+
+\end{minipage}
+
+\newpage
+
+\begin{minipage}[t][12.5cm][t]{17.4cm}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Stimmzettel}} \\
+für die Urabstimmung vom \votingdate{} \\
+
+\vspace{2cm}
+
+{\Large\textbf{Abstimmung der Anträge \enquote{Unvereinbarkeit mit rechtsextremen Parteien und Organisationen}}}
+
+\vspace{0.3cm}
+
+Gültige Stimmen sind jeweils \ja{}, \nein{} und \enthaltung{}.
+
+\vspace{0.15cm}
+
+Die Statutenänderung ist beschlossen, falls sie doppelt so viele \ja{}-Stimmen wie \nein{}-Stimmen erhält.
+
+\vspace{0.15cm}
+
+Die Unvereinbarkeitsordnung ist beschlossen, falls sie mehr \ja{}-Stimmen als \nein{}-Stimmen erhält. Die Unvereinbarkeitsordnung kann nur unter der Bedingung der Annahme der Statutenänderung in Kraft treten.
+
+\vspace{0.15cm}
+
+
+
+\vspace{1cm}
+
+\textbf{Abstimmungsfrage A: Statutenänderung betreffend \enquote{Unvereinbarkeit mit rechtsextremen Parteien und Organisationen}}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Nimmst du die Statutenänderung betreffend \enquote{Unvereinbarkeit mit rechtsextremen Parteien und Organisationen} an?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Abstimmungsfrage B: \enquote{Unvereinbarkeitsordnung}}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Nimmst du die \enquote{Unvereinbarkeitsordnung} an?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{1.5cm}
+
+Den Stimmzettel bitte nicht markieren!
+
+\end{minipage}
+
+\newpage
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+%\renewcommand{\baselinestretch}{2.0}
+
+
+
+
+{\Large\textbf{Abstimmungsfrage A: Statutenänderung betreffend \enquote{Unvereinbarkeit mit rechtsextremen Parteien und Organisationen}}}
+
+Die Piratenversammlung möge folgende Statutenänderung beschliessen.
+
+\art{4}{Rechte und Pflichten der Mitglieder}
+\abs{1-4}{...}
+\abs{5}{Die Mitgliedschaft in der Piratenpartei Schweiz ist unvereinbar mit der Mitgliedschaft oder themenübergreifenden oder andauernden Zusammenarbeit mit rechtsextremen Parteien und Organisationen. Näheres bestimmt eine Ordnung.}
+
+\vspace{0.2cm}
+
+\textbf{Begründung}
+
+Diese rechtsextremen Parteien machen eine Politik, die den Zielen der Piratenpartei diametral entgegenläuft. Insbesondere setzen sich sie gegen Menschenrechte, rechtsstaatliche Garantien sowie die Rechtsgleichheit, Partizipation und Freiheit von Ausländern ein.
+
+Aus diesem Grund sollten wir jedem politischen Bündnis mit diesen Parteien, welches nicht klar und ausschliesslich eines unserer eigenen Ziele verfolgt jetzt und in der Zukunft eine Absage erteilen. Es darf nicht sein, dass wir unsere Ziele und Werte einem kurzfristigen Machterhalt oder -gewinn opfern.
+
+\vspace{0.2cm}
+
+\textbf{Antragsteller}
+
+\vspace{-0.2cm}
+
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Stefan Thöni
+\item Jolanda Spiess-Hegglin
+\end{itemize}
+
+\vspace{0.8cm}
+
+{\Large\textbf{Abstimmungsfrage B: \enquote{Unvereinbarkeitsordnung}}}
+
+Die Piratenversammlung möge folgende Unvereinbarkeitsordnung beschliessen.
+
+\art{1}{Unvereinbarkeit}
+\abs{1}{Rechtsextreme Parteien und Organisationen gemäss Art. 4 Abs. 5 der Statuten sind insbesondere:}
+\lit{a}{Schweizerische Volkspartei}
+\lit{b}{Partei National Orientierter Schweizer}
+\lit{c}{Eidgenössisch Demokratische Union}
+\lit{d}{Movement Citoyen Genevois}
+\lit{e}{Lega dei Ticinesi}
+\lit{f}{Ecopop}
+\abs{2}{Gemeinsame Fraktionen, Listen und Listenverbindungen mit rechtsextremen Parteien und Organisationen sind ausgeschlossen.}
+\abs{3}{Eine themenbezogene Zusammenarbeit zur Erreichung der Ziele gemäss Art. 2 Abs. 2 der Statuten, insbesondere im Rahmen von Initiativen, Referenden und Abstimmungskämpfen, ist davon unberührt.}
+
+\art{A}{Übergangsbestimmungen}
+\abs{1}{Diese Ordnung tritt mit Beschluss sofort in Kraft.}
+\abs{2}{Mitglieder, die bei Inkrafttreten eine unvereinbare Zusammenarbeit unterhalten, beseitigen diesen Zustand bis spätestens 30 Tage nach Inkrafttreten.}
+
+\vspace{0.2cm}
+
+\textbf{Begründung und Antragsteller}
+
+Siehe Abstimmungsfrage A.
+
+}
+
+\end{document}

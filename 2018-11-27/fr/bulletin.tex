@@ -1,0 +1,267 @@
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{datatool}
+\usepackage{textpos}
+\usepackage{eso-pic}
+\usepackage{framed}
+\usepackage[german=swiss]{csquotes}
+\usepackage[english,french,italian,ngerman]{babel}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\usepackage{ppslaw}
+
+\setromanfont[BoldFont=Aller Bold]{Aller Light}
+\setsansfont[BoldFont=Aller Bold]{Aller Light}
+
+\newcommand{\votingdate}{27~novembre~2018}
+\newcommand{\oui}{\enquote{\textit{oui}}}
+\newcommand{\non}{\enquote{\textit{non}}}
+\newcommand{\abstention}{\enquote{\textit{abstention}}}
+
+\DTLsetseparator{;}
+\DTLloaddb[noheader,keys={id,sn,gn,mail,c,st,plz,loc,sal,cd,v}]{people}{people.csv}
+
+\begin{document}
+
+\selectlanguage{french}
+
+\DTLforeach{people}{\id=id,\surname=sn,\givenname=gn,\mail=mail,\country=c,\street=st,\postalcode=plz,\location=loc,\salutation=sal,\code=cd}{%
+
+%\AddToShipoutPicture{\put(0,0){\includegraphics[width=\paperwidth]{half.pdf}}}
+%\AddToShipoutPicture{\includegraphics[width=\paperwidth]{half.pdf}}
+
+\begin{minipage}[t][13.42cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\givenname~\surname     \\
+\street                 \\
+\postalcode~\location   \\
+\ifstr{\country}{Switzerland}{%
+\~                      \\
+}{%
+\country ~              \\
+}%
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+\begin{textblock}{13.5}(0,7.05)
+\centering
+\scriptsize
+plier ici \hspace{3.5cm} plier ici \hspace{3.5cm} plier ici
+\end{textblock}
+
+{\LARGE
+\textbf{Matériel de vote} pour la \\
+\textbf{Votation de base} du \\
+Parti Pirate Suisse \\
+le \votingdate{}
+
+}
+
+\vspace{5.5cm}
+
+\begin{textblock}{13.5}(0,0)
+Pour voter procédez comme suit:
+\begin{enumerate}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{1pt}
+\item Veuillez signer la carte d'électeur.
+\item Remplissez le bulletin de vote selon vos préférences.
+\item Glissez le bulletin de vote dans une enveloppe et fermez la soigneusement.
+\item Glissez cette enveloppe contenant le bulletin ainsi que la carte d'électeur ensemble dans une deuxième enveloppe (plus grande) et refermez bien celle-ci également.
+\item Envoyez cette enveloppe complète à l'adresse indiquée sur la carte d'électeur jusqu'au \textbf{\votingdate{}}.
+\end{enumerate}
+\end{textblock}
+
+\end{minipage}
+
+\line(1,0){500}
+\vspace{1cm}
+
+\begin{minipage}[t][12.5cm][t]{\textwidth}
+
+\begin{textblock}{9}(8.1,2.6)
+\underline{\textsuperscript*{ \givenname~\surname, \street, \postalcode~\location }} \\
+\vspace{-0.3cm} \\
+Piratenpartei Schweiz \\
+Präsidium der Piratenversammlung \\
+8000 Zürich
+\end{textblock}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Carte d'électeur}} \\
+pour la votation de base du \votingdate{} \\
+
+numéro de membre \textbf{\id}   \\
+\givenname~\surname         \\
+\street                     \\
+\postalcode~\location       \\
+\ifstr{\country}{Switzerland}{%
+\~                          \\
+}{%
+\country ~                  \\
+}%
+
+\begin{textblock}{6}(0,-0.2)
+Vérification:
+\end{textblock}
+
+\begin{textblock}{4}(2,-0.2)
+\raggedright
+\code
+\end{textblock}
+
+\vspace{4cm}
+
+\begin{textblock}{6}(0,-0.2)
+\begin{framed}
+Signature de l'électeur \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+\begin{textblock}{6}(7.3,-0.2)
+\begin{framed}
+Dépouillement \hfill Laissez vide! \\
+\vspace{1.5cm} ~ \\
+\end{framed}
+\end{textblock}
+
+
+\end{minipage}
+
+\newpage
+
+\begin{minipage}[t][12.5cm][t]{17.7cm}
+
+\begin{textblock}{6}(7.5,0)
+\includegraphics[width=7.5cm]{ww.pdf}
+\end{textblock}
+
+{\LARGE\textbf{Bulletin de vote}} \\
+pour la votation de base du \votingdate{} \\
+
+\vspace{2cm}
+
+{\Large\textbf{Votation sur les motions \enquote{Incompatibilité avec des partis et organisations d'extrême droite}}}
+
+\vspace{0.3cm}
+
+Les votes valides sont \oui{}, \non{} et \abstention{}.
+
+\vspace{0.15cm}
+
+%==> ÜBERSETZUNG!!!
+La modification des statuts est adoptée si elle reçoit deux fois plus de voix \oui{} que de voix \non{}.
+
+\vspace{0.15cm}
+
+%==> ÜBERSETZUNG!!!
+L'Ordonnance d'incompatibilité est adoptée si elle recueille plus de voix \oui{} que de voix \non{}. L'Ordonnance d'incompatibilité ne peut entrer en vigueur qu'à la condition que la modification des statuts soit acceptée.
+
+\vspace{1cm}
+
+\textbf{Question A: Modification des statuts concernant \enquote{Incompatibilité avec des partis et organisations d'extrême droite}}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Acceptes-tu la modification des statuts concernant \enquote{Incompatibilité avec des partis et organisations d'extrême droite}?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Question B: \enquote{Ordonnance d'incompatibilité}}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ b{13.5cm} b{3cm} }
+Acceptes-tu \enquote{l'Ordonnance d'incompatibilité}?
+& \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+\end{tabular}
+
+\vspace{1.5cm}
+
+Veuillez ne pas marquer ou annoter le présent bulletin!
+
+
+\end{minipage}
+
+\newpage
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+%\renewcommand{\baselinestretch}{2.0}
+
+
+
+
+{\Large\textbf{Question A: Modification des statuts concernant \enquote{Incompatibilité avec des partis et organisations d'extrême droite}}}
+
+L'Assemblée Pirate est priée de prendre position sur la modification des statuts qui suit.
+
+\art{4}{Droits et Devoirs des membres}
+\abs{1-4}{...}
+\abs{5}{L'adhésion au Parti Pirate Suisse est incompatible avec l'adhésion ou la coopération croisée ou permanente avec des partis et organisations d'extrême droite. Les détails sont fixés dans l'ordonnance.}
+
+\vspace{0.2cm}
+
+\textbf{Justification}
+
+Ces partis d'extrême droite poursuivent une politique qui s'oppose diamétralement aux objectifs du Parti pirate. En particulier, ils s'opposent aux droits de l'homme, à l'État de droit, à l'égalité des droits, à la participation et à la liberté des étrangers.
+
+C'est pourquoi nous devrions rejeter toute alliance politique avec ces partis qui ne poursuit pas clairement et exclusivement l'un de nos objectifs actuels et futurs. Nous ne devons pas sacrifier nos objectifs et nos valeurs au nom du maintien ou de l'acquisition du pouvoir à court terme.
+
+\vspace{0.2cm}
+
+\textbf{Motionnaires}
+
+\vspace{-0.2cm}
+
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Stefan Thöni
+\item Jolanda Spiess-Hegglin
+\end{itemize}
+
+\vspace{0.8cm}
+
+{\Large\textbf{Question B: \enquote{Ordonnance d'incompatibilité}}}
+
+L'Assemblée Pirate est priée d'adopter l'ordonnace d'incompatibilité suivant.
+
+\art{1}{Incompatibilité}
+\abs{1}{Les partis et organisations d'extrême droite au sens de l'art. 4 al. 5 des statuts sont notamment les suivants:}
+\lit{a}{L'Union démocratique du centre}
+\lit{b}{Le Parti Nationaliste Suisse}
+\lit{c}{L'Union Démocratique Fédérale}
+\lit{d}{Mouvement Citoyen Genevois}
+\lit{e}{Lega dei Ticinesi}
+\lit{f}{Ecopop}
+\abs{2}{Les groupes parlementaires, listes communes et listes apparentées avec des partis et organisations d'extrême droite sont exclues.}
+\abs{3}{Une coopération sur un sujet pour atteindre les objectifs selon l'art. 2 al. 2 des statuts, en particulier dans le cadre d'initiatives, de référendums et de référendums, n'en est pas affectée.}
+
+\art{A}{Dispositions transitoires}
+\abs{1}{La présente ordonnance entre en vigueur immédiatement.}
+\abs{2}{Les membres ayant une coopération incompatible au moment de l'entrée en vigueur du présent règlement remédieront à cette situation au plus tard 30 jours après son entrée en vigueur.}
+
+\vspace{0.2cm}
+
+\textbf{Justification et motionnaire}
+
+Voir Question A.
+
+}
+
+\end{document}
